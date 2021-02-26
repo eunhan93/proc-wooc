@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+
+.inner-footer{
+  display: flex;
+  gap: 30px;
+}
+.inner-footer > div{
+  flex: 1;
+  font-size: 0.7rem;
+  font-weight: 300;
+}
