@@ -4,7 +4,8 @@
 function proc_wooc_config(){
   register_nav_menus(array(
     "primary_menu_id" => "Primary Menu(Top Memu)",
-    "secondary_menu_id" => "Sidebar Menu",
+    "secondary_menu_id" => "before_login",
+    "tertiary_menu_id" => "after_login",
   ));
 
   add_theme_support("post-thumbnails");

@@ -9,3 +9,5 @@ include 'functions-adm-enqueue-scripts.php';
 
 include 'company/functions-company.php';
 
+include 'jordan/functions-jordan.php';
+
