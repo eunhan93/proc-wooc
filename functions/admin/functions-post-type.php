@@ -58,7 +58,7 @@ function proc_register_post_type(){
     'menu_position' => 3,
     // 'menu_icon' => 'dashicons-info-outline',
     'menu_icon' => get_template_directory_uri() . '/image/iconmonstr-basketball-1-16.png',
-    'supports' => array('title', "editor", 'thumbnail')
+    'supports' => array('title', 'thumbnail','excerpt')
   );
   register_post_type('jordan', $jordan_args);
 

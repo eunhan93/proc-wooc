@@ -24,7 +24,7 @@ function put_text_meta($postNumber, $metaname){
   <div class="wrap">
     <header class="header">
       <div class="inner_header_1 ">
-        <div class="container-1">
+        <div class="container">
           <section class="jd_logo">
             <img src="http://localhost/wordpress/wp-content/uploads/2021/02/jd_logo.jpg" alt="조단">
           </section>
@@ -35,6 +35,8 @@ function put_text_meta($postNumber, $metaname){
                 "theme_location" => 'tertiary_menu_id',
                 "menu_class" => 'login-menu gray-top-menu',
               ]);
+              ?>
+              <?php
             } else {
               wp_nav_menu([
                 "theme_location" => 'secondary_menu_id',
@@ -46,7 +48,7 @@ function put_text_meta($postNumber, $metaname){
           </section>
         </div>
       </div>
-      <div class="inner_header_2 container-1">
+      <div class="inner_header_2 container">
         <section class="logo">
           <a href="<?php echo home_url();?>">
             <img src="<?php echo get_post(get_post_meta('216', 'comp_logo_image', true)) -> guid; ?>" alt="<?php echo put_text_meta('216', 'comp_name');?>">
@@ -61,7 +63,34 @@ function put_text_meta($postNumber, $metaname){
               ]);
           ?>
         </section>
-       <section></section>
+       <section class="search-heart-cart">
+
+       <?php get_search_form (); ?>
+       <a href="<?php echo get_template_directory_uri();?>/wish-list">하트</a>
+       <a href="<?php echo get_template_directory_uri();?>/cart">카트</a>
+       </section>
       </div>
+      <?php
+      if(is_home()){
+      ?>
+      <div class="inner_header_3 container-1">
+        <section class="jd-fix-menu">
+          <div class="inner-jd-fix-menu">
+            <div class="jd-fix-logo">
+              <img src="http://localhost/wordpress/wp-content/uploads/2021/02/jd_logo.jpg" alt="조단">
+            </div>
+            <?php 
+              
+                wp_nav_menu([
+                  "theme_location" => 'jordan_home_menu',
+                  "container" => 'nav',
+                  "menu_class" => 'jordan-menu',
+                ]);
+             
+            ?>
+          </div>
+        </section>
+      </div>
+      <?php  } ?>
     </header>
     <main>

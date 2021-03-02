@@ -6,6 +6,7 @@ function proc_wooc_config(){
     "primary_menu_id" => "Primary Menu(Top Memu)",
     "secondary_menu_id" => "before_login",
     "tertiary_menu_id" => "after_login",
+    "jordan_home_menu" => 'jordan-home'
   ));
 
   add_theme_support("post-thumbnails");
