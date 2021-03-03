@@ -1,3 +1,6 @@
+<div class="container-3">
+          <h4>추천 상품</h4>
+
 <div class="swiper-container">
   <div class="swiper-wrapper">
     <!-- 슬라이드 영역 -->
@@ -22,10 +25,23 @@
               </div>
               <div class="text-area">
                 <h4><?php the_title();?></h4>
+
+                <?php 
+                if(!empty(get_the_terms(get_the_ID(), "pa_color"))){
+                  ?>
+                  <p class="color_opt_count"><?php echo count(get_the_terms(get_the_ID(), "pa_color")); ?> 컬러</p>
+                  <?php
+                }
+                
+                ?>
+
+
+                <!-- 가격 -->
                 <?php 
                 if(!empty(get_post_meta(get_the_ID(), "_sale_price", true))){
                   ?>
                   <p><?php echo number_format(get_post_meta(get_the_ID(), "_sale_price", true));?>원 </p>
+                  <p style="text-decoration: line-through;"><?php echo number_format(get_post_meta(get_the_ID(), "_regular_price", true));?>원 </p>
                   <?php 
                 } else if (!empty(get_post_meta(get_the_ID(), "_regular_price", true))){
                   ?>
@@ -51,3 +67,12 @@
   </div>
   <div class="swiper-pagination"></div>
 </div>
+
+</div>
+
+<!-- 
+
+
+                  // var_dump(get_the_terms(get_the_ID(), "pa_color"));
+
+ -->

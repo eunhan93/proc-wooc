@@ -23,7 +23,8 @@ add_action('add_meta_boxes_product', 'proc_meta_boxes_product');
 add_action('edit_form_advanced', function () {
   if(get_current_screen() -> post_type === 'product'){
     echo "<pre>";
-    var_dump(get_post_meta(get_the_ID())); //_regular_price, _sale_price
+    // var_dump(get_post_meta(get_the_ID())); //_regular_price, _sale_price
+    print_r(get_post_meta(get_the_ID())); //_regular_price, _sale_price
     echo "</pre>";
   }
 }); 

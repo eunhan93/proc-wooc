@@ -65,9 +65,25 @@ function put_text_meta($postNumber, $metaname){
         </section>
        <section class="search-heart-cart">
 
-       <?php get_search_form (); ?>
-       <a href="<?php echo get_template_directory_uri();?>/wish-list">하트</a>
-       <a href="<?php echo get_template_directory_uri();?>/cart">카트</a>
+        <?php get_search_form (); ?>
+        <a href="<?php
+        if(is_user_logged_in()){
+          echo get_template_directory_uri() . '/wish-list';
+        } else {
+          echo get_template_directory_uri() . '/login';
+        }
+        ?>" class="wish-list-page-icon">
+          <i class="far fa-heart"></i>
+        </a>
+        <a href="<?php 
+          if(is_user_logged_in()){
+            echo get_template_directory_uri() . '/cart';
+          } else {
+            echo get_template_directory_uri() . '/login';
+          }
+        ?>" class="cart-page-icon">
+          <i class="far fa-square"></i>
+        </a>
        </section>
       </div>
       <?php
