@@ -157,3 +157,84 @@ header.header .inner_header_3 .jd-fix-menu.fix-top .inner-jd-fix-menu .jd-fix-lo
   width: 100%;
   height: auto;
 }
+
+
+
+/* item-filter-order-header.php */
+.item-orderby-header{
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 103px;
+  position: absolute;
+  top: 0;
+}
+.item-orderby-header h4 span{
+  text-transform: capitalize;
+}
+.item-orderby-header .order-by-filter{
+  display: flex;
+  align-items: center;
+}
+.item-orderby-header .order-by-filter .order-by-list{
+  position: relative;
+}
+.item-orderby-header .order-by-filter .order-by-list .order-by-list-select{
+  position: absolute;
+  right: 0;
+}
+.item-orderby-header .order-by-filter .order-by-list .order-by-list-select a{
+  display: block;
+}
+
+
+
+/* category page */
+
+.tax-product_cat .inner-main{
+  position: relative;
+}
+.tax-product_cat .inner-main .s-side{
+  position: absolute;
+  top: 110px;
+  width: 300px;
+}
+.tax-product_cat .inner-main .s-items{
+  padding-top: 103px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding-left: 300px;
+}
+
+
+.tax-product_cat .inner-main .s-items .jd-item {
+  width: calc(33.333% - 10px);
+}
+.tax-product_cat .inner-main .s-items .jd-item img{
+  width: 100%;
+  height: auto;
+}
+
+
+.cat-tit-area{
+  position: relative;
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+.cat-tit-area img{
+  width: 100%;
+  height: auto;
+}
+
+.cat-tit-area h2{
+  position: absolute;
+  line-height: 1;
+  font-size: 26px;
+  font-weight: 500;
+  top: calc(50% - 13px);
+  left: 30px;
+  color: white;
+}
