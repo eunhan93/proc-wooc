@@ -26,7 +26,7 @@ function put_text_meta($postNumber, $metaname){
       <div class="inner_header_1 ">
         <div class="container">
           <section class="jd_logo">
-            <img src="http://localhost/wordpress/wp-content/uploads/2021/02/jd_logo.jpg" alt="조단">
+            <img src="http://localhost/wordpress/wp-content/uploads/2021/03/jd_logo.png" alt="조단">
           </section>
           <section>
             <?php 

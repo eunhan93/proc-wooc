@@ -17,7 +17,15 @@
 	?>
 
 	<aside class="s-side">
-	dd
+		<div class="inner-s-side">
+			<?php        
+			wp_nav_menu([
+				"theme_location" => 'jordan_home_menu',
+				"menu_class" => 'jordan-menu',
+			]);
+		?>
+		</div>
+		
 	</aside>
 
 	<section class="section s-items">
@@ -59,9 +67,7 @@
 
 <?php 
 
-echo $_GET['sort'];
-
-$cat_item_query = new WP_Query([
+$args = [
 	'post_type'     => 'product', 
 	'tax_query'     => array( 
 			array(
@@ -70,7 +76,25 @@ $cat_item_query = new WP_Query([
 					'terms'    => $cat_slug, 
 			),
 	),
-]);
+];
+
+if(!empty($_GET['sort'])){
+	
+	$args['orderby']   = 'meta_value_num';
+	$args['meta_key']  = '_price';
+
+	if($_GET['sort'] === 'price_desc'){
+		$args["order"] = 'desc';
+
+	} else if($_GET['sort'] === 'price_asc'){
+		$args["order"] = 'asc';
+	}
+}
+
+
+$cat_item_query = new WP_Query($args);
+
+// var_dump($cat_item_query);
 
 if($cat_item_query -> have_posts()){
 	while($cat_item_query -> have_posts()){
@@ -81,8 +105,6 @@ if($cat_item_query -> have_posts()){
 		include $parentDir . '/components/product-item.php';
 	}
 }
-
-
 
 
 ?>

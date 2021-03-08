@@ -7,7 +7,9 @@
       if(!empty(get_the_terms(get_the_ID(), 'product_tag'))){
         ?><p class="jd-item-tag"><?php
         foreach(get_the_terms(get_the_ID(), 'product_tag') as $tag){
+          echo "<span>";
           echo $tag -> name;
+          echo "</span>";
         } ?>
         </p>
         <?php
