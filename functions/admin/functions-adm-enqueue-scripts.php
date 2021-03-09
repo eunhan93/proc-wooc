@@ -20,6 +20,16 @@ function proc_adm_scripts(){
       '2021-02-26', true);
   }
 
+  // var_dump(get_current_screen());
+  if(get_current_screen() -> id === 'product'){
+    
+    wp_enqueue_script(
+      'add_group_item', 
+      get_template_directory_uri() . '/assets/admin/js/add_group_item.js', 
+      [],  // [] = deps 의존, 다른 스크립트의 handle 값(첫번째 인자값). 여기에 값이 들어가면 해당 값 다음에 입력됨.
+      '2021-03-09', true);
+  }
+
 }
 
 add_action('admin_enqueue_scripts', 'proc_adm_scripts');

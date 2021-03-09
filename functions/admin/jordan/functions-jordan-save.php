@@ -11,7 +11,7 @@ function proc_save_post_product($post_id) {
   }
 }
 
-// add_action('save_post_product', 'proc_save_post_product');
+add_action('save_post_product', 'proc_save_post_product');
 
 
 // 조던 컬렉션 - post type : jordan
