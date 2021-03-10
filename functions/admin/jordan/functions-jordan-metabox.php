@@ -14,7 +14,7 @@ function proc_meta_boxes_product() {
   // }, 'book');
 
   add_meta_box('jordan-group', '그룹상품', function(){
-      include 'metabox/test.php';
+      include 'metabox/group-items.php';
     }, 'product');
 }
 

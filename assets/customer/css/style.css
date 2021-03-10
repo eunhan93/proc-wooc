@@ -507,3 +507,61 @@ padding-bottom: 20px;
 .product-detail .product-info .product-siezes ul li input[type="radio"]:disabled + label:hover{
   border: none
 }
+
+.product-detail .product-info form p {
+  display: flex;
+  align-items: center;
+}
+.product-detail .product-info form p input[type="number"]{
+  text-align: center; 
+  border: none;
+  display: inline-block;
+  height: 100%;
+  font-size: 1rem;
+}
+.product-detail .product-info form p input[type="number"]::-webkit-outer-spin-button,
+.product-detail .product-info form p input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.product-detail .product-info form p button{
+  border: none;
+  font-size: 2rem;
+  background: none;
+  box-shadow: none;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  text-indent: -9999px;
+}
+.product-detail .product-info form p button.qty-minus:before{
+  content: '';
+  position: absolute;
+  top: calc(50% - 1px);
+  left: 25%;
+  width: 50%;
+  height: 0;
+  border-top: 2px solid;
+}
+
+.product-detail .product-info form p button.qty-plus:before{
+  content: '';
+  position: absolute;
+  top: calc(50% - 1px);
+  left: 25%;
+  width: 50%;
+  height: 0;
+  border-top: 2px solid;
+}
+.product-detail .product-info form p button.qty-plus:after{
+  content: '';
+  position: absolute;
+  top: calc(50% - 1px);
+  left: 25%;
+  width: 50%;
+  height: 0;
+  border-top: 2px solid;
+  transform: rotate(-90deg);
+}

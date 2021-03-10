@@ -41,7 +41,7 @@ get_header();
 			<h1><?php echo $product -> name; ?></h1>
 			<div class="product-colors">
 				<?php 
-					$postIdArr = explode(",",get_post_meta(get_the_ID(), 'selected_group_item', true));
+					$postIdArr = get_post_meta(get_the_ID(), "g_items", true);
 					foreach($postIdArr as $gi) {
 						?>
 						<a href="<?php echo get_the_permalink($gi)?>" class="<?php 
@@ -85,8 +85,16 @@ get_header();
 				</ul>
 				
 			</div>
-			<input type="number" name="quantity" id="quantity">
+			<p>
+				<label for="quantity">수량</label>
+				<input type="number" name="quantity" id="quantity" min='1' max='10' value='1'>
+				<button type="button" class="qty-minus">-</button>
+				<button type="button" class="qty-plus">+</button>
+				
+			</p>
+			
 			<input type="submit" value="장바구니">
+			<button type="button" class="quickBuyBtn">바로구매</button>
 			</form>
 		</div>
 	</section>

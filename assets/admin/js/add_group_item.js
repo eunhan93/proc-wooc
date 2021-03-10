@@ -4,7 +4,7 @@ const selectInput = document.getElementById('get_the_post_id');
 const selectValue = document.getElementById('group-item');
 const selected = document.getElementById('addGroupItemBtn');
 
-const addThumbnailArea = document.querySelector('.group_post_id_thumbnail');
+const addInputPostId = document.querySelector('.group_post_id');
 
 function getSelectValues(select) {
   var result = [];
@@ -29,20 +29,34 @@ function getSelectValues(select) {
 
   
   
-console.log(selectInput.value);
+// console.log(selectInput.value);
   
 // }
 
 
 selected.addEventListener('click', function(){
-  selectInput.value =  getSelectValues(selectValue);
+  // selectInput.value =  getSelectValues(selectValue);
   // selectInput.setAttribute('value', getSelectValues(selectValue))
   // selectInput.innerText =  getSelectValues(selectValue);
-  console.log(selectInput.value);
+  // console.log(selectInput.value);
 
-  getSelectValues(selectValue).forEach(el => {
-    let htmlPhp = '<?= get_the_post_thumbnail_url(' + el +', "thumbnail"); ?>';
-    console.log(htmlPhp);
-    addThumbnailArea.innerHTML = htmlPhp
+
+  addInputPostId.innerHTML = "";
+  getSelectValues(selectValue).forEach((el, i) => {
+    addInputPostId.innerHTML += `<input type="hidden" value="${el}" name="meta[g_items][]" id="product-${el}" />`;
   })
-})
+
+  // getSelectValues(selectValue).forEach(el => {
+  //   let htmlPhp = '<?= get_the_post_thumbnail_url(' + el +', "thumbnail"); ?>';
+  //   console.log(htmlPhp);
+  //   addThumbnailArea.innerHTML = htmlPhp
+  // })
+}) 
+
+
+
+jQuery(function(){
+  function clickDelete(){
+    jQuery(this).parents().remove();
+  }
+});

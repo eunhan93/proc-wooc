@@ -26,9 +26,14 @@ function proc_adm_scripts(){
     wp_enqueue_script(
       'add_group_item', 
       get_template_directory_uri() . '/assets/admin/js/add_group_item.js', 
-      [],  // [] = deps 의존, 다른 스크립트의 handle 값(첫번째 인자값). 여기에 값이 들어가면 해당 값 다음에 입력됨.
+      ['jquery'],  // [] = deps 의존, 다른 스크립트의 handle 값(첫번째 인자값). 여기에 값이 들어가면 해당 값 다음에 입력됨.
       '2021-03-09', true);
+
+
+      
   }
+
+  wp_enqueue_style('admin-style', get_template_directory_uri() . '/assets/admin/css/admin-style.css', [], '1.0', 'all');
 
 }
 

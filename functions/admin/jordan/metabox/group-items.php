@@ -25,22 +25,57 @@
 	</div>
 </div>
 
+<?php
+
+$g_items = get_post_meta(get_the_ID(), "g_items", true);
+
+?>
 
 <!-- </table> -->
 
 
-<input type="hidden" id="get_the_post_id" name="meta[selected_group_item]" value="<?php echo (get_post_meta(get_the_ID(), 'selected_group_item', true)); ?>">
+<!-- <input type="hidden" id="get_the_post_id" name="meta[selected_group_item]" value="<?php echo (get_post_meta(get_the_ID(), 'selected_group_item', true)); ?>"> -->
+<div class="group_post_id">
+<!-- <script>
+
+</script> -->
+ <?php
+ if(!empty($g_items)){
+		foreach($g_items as $gi){
+			?>
+			<div>
+			
+				<input type="hidden" value="<?php echo $gi; ?>" name="meta[g_items][]" id="product-<?php echo $gi; ?>" />
+				<label for="product-<?php echo $gi; ?>">
+				<?php
+				
+				echo '<p>' . get_the_post_thumbnail($gi, 'thumbnail') . '</p>';
+				echo '<p>' . get_the_excerpt($gi) . '</p>';
+
+				?>
+				</label>
+				<button type="button" onclick="javascript: this.parentNode.parentNode.removeChild(this.parentNode)">제거</button>
+			</div>
+			<?php
+		}
+	
+ }
+ 
+ 
+ ?>
+
+</div>
 <div class="group_post_id_thumbnail">
 	<?php 
-		if(!empty(get_post_meta(get_the_ID(), 'selected_group_item', true))){
-			$postIdArr = explode(",",get_post_meta(get_the_ID(), 'selected_group_item', true));
-			foreach($postIdArr as $p_id){
+
+		if(!empty($g_items)){
+			foreach($g_items as $p_id){
 				?>
 				<div>
 				<?php
 				
-				echo '<p>' . get_the_post_thumbnail($p_id, 'thumbnail') . '</p>';
-				echo '<p>' . get_the_excerpt($p_id) . '</p>';
+				// echo '<p>' . get_the_post_thumbnail($p_id, 'thumbnail') . '</p>';
+				// echo '<p>' . get_the_excerpt($p_id) . '</p>';
 
 				?>
 				</div>
@@ -51,10 +86,6 @@
 
 	?>
 
-<?php 
-global $availability;
-echo wp_kses_post( $availability ); 
-?>
 </div>
 
 </div>
