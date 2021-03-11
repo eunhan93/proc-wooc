@@ -117,5 +117,23 @@ get_header();
 		<?php endwhile; // end of the loop. ?>
 
 	</div>
+
+	<?php 
+	
+	// var_dump(get_the_ID())
+	foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+		// $_product = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
+		echo '<pre>';
+		var_dump( $cart_item);
+
+		echo '</pre><br /><br /><br />';
+		if($cart_item['product_id'] == '317' && $cart_item['variation_id'] == '340'){
+					// var_dump( $cart_item);
+
+		}
+	}
+	
+	
+	?>
 <?php
 get_footer();

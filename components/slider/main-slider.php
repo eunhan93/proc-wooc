@@ -3,7 +3,7 @@
     <!-- 슬라이드 영역 -->
     <?php 
     $args = array(
-      'post_type' 	=> array( 'product' ),
+      'post_type' 	=> 'product',
       'product_cat' => 'jordan',
       'meta_key'  	=> 'total_sales',
       'orderby'   	=> 'meta_value_num',
