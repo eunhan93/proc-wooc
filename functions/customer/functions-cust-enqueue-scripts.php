@@ -31,6 +31,14 @@ function proc_cust_scripts(){
 
   }
 
+  if(is_single('cs')){
+    wp_enqueue_style('cs-style', get_template_directory_uri() . '/assets/customer/css/cs-style.css', []);
+  }
+
+  if(is_page('nike-cs')){
+    wp_enqueue_style('cs-style', get_template_directory_uri() . '/assets/customer/css/cs-style.css', []);
+  }
+
 }
 
 add_action('wp_enqueue_scripts', 'proc_cust_scripts');

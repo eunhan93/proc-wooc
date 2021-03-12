@@ -110,3 +110,21 @@ function put_text_meta($postNumber, $metaname){
       <?php  } ?>
     </header>
     <main>
+    <?php 
+    if(is_page('nike-cs')){
+      ?>
+      <div class="inner-main">
+        <section class="nike-cs-1">
+          <div class="inner-nike-cs-1 container-4">
+            <h1><a href="<?php echo get_post_permalink(get_page_by_path( '/nike-cs/', OBJECT, 'page' )); ?>">고객센터</a></h1>
+            <?php 
+              include 'cs-search-form.php';
+            ?>
+          </div>
+          
+        </section>
+
+    <?php
+      } 
+      
+    ?>

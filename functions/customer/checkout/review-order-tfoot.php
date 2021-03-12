@@ -63,7 +63,17 @@
 
 		<tr class="order-total">
 			<th><?php esc_html_e( 'Total', 'woocommerce' ); ?></th>
-			<td><?php wc_cart_totals_order_total_html(); ?></td>
+			<td><?php wc_cart_totals_order_total_html(); ?>
+			<?php 
+				if(!empty($_GET['item'])){}
+				foreach(WC()->cart->get_cart() as $cart_item_key => $cart_item){
+					if($cart_item_key == $_GET['item']){
+						echo number_format($cart_item['line_subtotal']);
+					}
+				}
+			?>
+			
+			</td>
 		</tr>
 
 		<?php do_action( 'woocommerce_review_order_after_order_total' ); ?>

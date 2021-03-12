@@ -51,3 +51,13 @@ function buy_now_checkout_order_review_action(){
 		remove_action( 'woocommerce_checkout_order_review', 'buy_now_checkout_order_review_action');
 	}
 }
+
+
+
+add_action('kboard_skin_header', function (){
+	echo '<div class="inner-main container-3">';
+}, 10);
+
+add_action('kboard_skin_footer', function (){
+	echo '</div>';
+}, 10);

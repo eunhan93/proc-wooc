@@ -1,0 +1,112 @@
+header.header{
+  position: fixed;
+  top: 0;
+  border-bottom: 1px solid #e5e5e5;
+  width: 100%;
+  background: #fff;
+
+}
+header.header .inner_header_1 {
+  display: none;
+}
+
+header.header .inner_header_2{
+  height: 71px;
+  justify-content: center;
+}
+
+header.header .inner_header_2 section {
+  display: none !important;
+  flex: inherit;
+}
+
+header.header .inner_header_2 .logo{
+  display: block !important;
+}
+/* header.header .inner_header_2.conainer */
+
+
+/* nike cs */
+.inner-main{
+  background-color: #f7f7f7;
+  padding-top: 320px;
+  padding-bottom: 50px;
+}
+.nike-cs-1 {
+  position: fixed;
+  width: 100%;
+  top: 72px;
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.nike-cs-1 .inner-nike-cs-1{
+  padding: 50px 0;
+  text-align: center;
+}
+.nike-cs-1 .inner-nike-cs-1 h1{
+  margin-bottom: 20px;
+}
+.nike-cs-1 .inner-nike-cs-1 h1 a{
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+
+.nike-cs-1 .inner-nike-cs-1 .cs-searchform div{
+  border: 1px solid #e5e5e5;
+  width: 490px;
+  height: 40px;
+  margin: 0 auto;
+  display: flex;
+  padding: 0 15px;
+  align-items: center;
+}
+
+.nike-cs-1 .inner-nike-cs-1 .cs-searchform div i{
+  font-size: 1.2rem;
+  margin-right: 15px;
+  color: #4e4e4e;
+}
+
+.nike-cs-1 .inner-nike-cs-1 .cs-searchform div input#query{
+  height: 100%;
+  display: inline-block;
+  border: none;
+  color: #666;
+  font-size: .875rem;
+}
+
+.nike-cs-2 .inner-nike-cs-2 {
+  min-height: 500px;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+
+}
+
+.nike-cs-2 .inner-nike-cs-2.search-result h3{
+  padding: 70px 0;
+  border-bottom: 1px solid #e5e5e5;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+.nike-cs-2 .inner-nike-cs-2.search-result > a{
+  display: block;
+  padding: 70px 0;
+  width: calc(100% - 60px);
+  margin: 0 auto;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.nike-cs-2 .inner-nike-cs-2.search-result > a h2{
+  margin-bottom: 20px;
+}
+
+.nike-cs-2 .inner-nike-cs-2.search-result > a:hover h2{
+  color: #fa5400;
+}
+
+.nike-cs-2 .inner-nike-cs-2.search-result .paginationArea{
+
+}

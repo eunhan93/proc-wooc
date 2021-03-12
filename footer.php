@@ -1,3 +1,12 @@
+<?php 
+    if(is_page('nike-cs')){
+      ?>
+      </div>
+
+    <?php
+    }
+    ?>
+    
     </main>
     <footer class="footer">
     <?php 

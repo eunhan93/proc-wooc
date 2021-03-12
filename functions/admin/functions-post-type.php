@@ -63,6 +63,39 @@ function proc_register_post_type(){
   register_post_type('jordan', $jordan_args);
 
 
+
+
+   // 고객센터
+   $cs_labels = array(
+    'name'                  => '고객센터',
+    'singular_name'         => '고객센터',
+    'menu_name'             => '고객센터',
+    'name_admin_bar'        => '고객센터',
+    'add_new'               => '새 고객센터 글 추가',
+    'add_new_item'          => '새 고객센터 글을 추가합니다',
+    'new_item'              => '새 고객센터 글',
+    'edit_item'             => '고객센터 글 수정',
+    'view_item'             => '고객센터 글 보기',
+    'all_items'             => '고객센터 글 목록',
+    'search_items'          => '고객센터 글 검색',
+    'not_found'             => '현재 입력한 고객센터 글이 없습니다.',
+    'not_found_in_trash'    => '휴지통에 고객센터 글이 없습니다.',
+    
+  );
+
+  $cs_args = array (
+    'has_archive' => true,
+    'public' => true,
+    'labels' => $cs_labels,
+    'menu_position' => 4,
+    'menu_icon' => 'dashicons-groups',
+    // 'menu_icon' => get_template_directory_uri() . '/image/iconmonstr-basketball-1-16.png',,'headway-seo'
+    'supports' => array('title', 'editor', 'thumbnail', 'excerpt' )
+  );
+  register_post_type('cs', $cs_args);
+
+
+
 }
 
 add_action('init', 'proc_register_post_type');
