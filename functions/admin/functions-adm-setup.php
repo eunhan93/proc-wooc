@@ -8,6 +8,7 @@ function proc_wooc_config(){
     "tertiary_menu_id" => "after_login",
     "jordan_home_menu" => 'jordan-home',
     "cs_menu" => 'cs-menu',
+    "cs_frequently_menu" => 'cs-frequently-menu',
   ));
 
   add_theme_support("post-thumbnails");

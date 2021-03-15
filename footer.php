@@ -5,6 +5,13 @@
 
     <?php
     }
+
+    if(is_tax('cs-type')){
+      ?>
+      </div>
+
+    <?php
+    }
     ?>
     
     </main>

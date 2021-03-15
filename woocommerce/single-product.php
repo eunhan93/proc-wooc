@@ -92,6 +92,7 @@ get_header();
 				<button type="button" class="qty-plus">+</button>
 				
 			</p>
+
 			
 			<input type="submit" value="장바구니">
 			<button type="button" class="quickBuyBtn">바로구매</button>

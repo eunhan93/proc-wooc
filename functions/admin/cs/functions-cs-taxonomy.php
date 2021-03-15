@@ -3,7 +3,7 @@
 
 function cs_taxonomy(){
   
-  register_taxonomy('cs_subject', 'cs', [
+  register_taxonomy('cs-type', 'cs', [
     'labels' => [
         'name'              => '주제',
         'singular_name'     => '주제',

@@ -27,7 +27,7 @@ header.header .inner_header_2 .logo{
 
 
 /* nike cs */
-.inner-main{
+.inner-main.nike-cs{
   background-color: #f7f7f7;
   padding-top: 320px;
   padding-bottom: 50px;
@@ -37,7 +37,7 @@ header.header .inner_header_2 .logo{
   width: 100%;
   top: 72px;
   background: #fff;
-  border-bottom: 1px solid #e5e5e5;
+  /* border-bottom: 1px solid #e5e5e5; */
 }
 
 .nike-cs-1 .inner-nike-cs-1{
@@ -107,6 +107,171 @@ header.header .inner_header_2 .logo{
   color: #fa5400;
 }
 
-.nike-cs-2 .inner-nike-cs-2.search-result .paginationArea{
+.nike-cs-2 .inner-nike-cs-2.search-result div.result-0{
+  padding: 30px;
+}
+.nike-cs-2 .inner-nike-cs-2.search-result div.result-0 h4{
+  padding:  20px 0 40px;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 40px;
+  font-size: 1.0125rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.nike-cs-2 .inner-nike-cs-2.search-result div.result-0 p{
+  color: #999;
+  font-size: 0.875rem;
+  margin-bottom: 30px;
+  font-weight: 200;
+}
 
+.nike-cs-2 .inner-nike-cs-2.search-result div.result-0 a{
+  text-decoration: underline;
+  font-size: 0.8125rem;
+  color: #666;
+}
+
+.nike-cs-2 .inner-nike-cs-2.search-result .cs-pagination{
+  padding: 20px 0;
+  text-align: center;
+}
+
+.nike-cs-2 .inner-nike-cs-2.no-search{
+  padding: 30px;
+}
+.nike-cs-2 .inner-nike-cs-2.no-search div.nike-cs-2-tit{
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+}
+.nike-cs-2 .inner-nike-cs-2.no-search div.nike-cs-2-tit h3{
+  font-weight: bold;
+  font-size: 1.25rem;
+  padding-bottom: 10px;
+}
+.nike-cs-2 .inner-nike-cs-2.no-search div.nike-cs-2-tit p{
+  font-size: 0.8125rem;
+}
+
+.nike-cs-2 .inner-nike-cs-2.no-search nav ul.cs_menu{
+  display: flex;
+  flex-wrap: wrap;
+}
+.nike-cs-2 .inner-nike-cs-2.no-search nav ul.cs_menu > li{
+  width: 33.3333%;
+  margin-bottom: 50px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.nike-cs-2 .inner-nike-cs-2.no-search nav ul.cs_menu li ul.sub-menu li {
+  padding: 20px 0 0 20px;
+  font-size: 0.75rem;
+  font-weight: normal;
+}
+
+
+.nike-cs-3 .inner-nike-cs-3 {
+  margin-top: 20px;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  height: 300px;
+  padding: 30px;
+}
+
+.nike-cs-3 .inner-nike-cs-3 h3{
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.nike-cs-3 .inner-nike-cs-3 .nike-cs-3-contact{
+  display: flex;
+  /* align-items: center; */
+  padding-top: 50px;
+  height: calc(100% - 10px);
+}
+
+.nike-cs-3 .inner-nike-cs-3 .nike-cs-3-contact li{
+  flex: 1;
+  text-align: center;
+}
+.nike-cs-3 .inner-nike-cs-3 .nike-cs-3-contact li i {
+  font-size:3rem;
+  margin-bottom: 15px;
+}
+
+.nike-cs-3 .inner-nike-cs-3 .nike-cs-3-contact li h6{
+  line-height: 1.5;
+  font-size: 0.875rem;
+  margin-bottom: 15px;
+}
+
+.nike-cs-3 .inner-nike-cs-3 .nike-cs-3-contact li p{
+  color: #666;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+
+
+/* is_tax('cs-type') */
+
+.inner-main.cs-type{
+  padding-top: 72px;
+}
+
+.cs-type-main-section{
+  display: flex;
+  border: 1px solid #e5e5e5;
+}
+
+.cs-type-main-section .cs-type-left,
+.cs-type-main-section .cs-type-right{
+  flex: 1;
+}
+
+.cs-type-main-section .cs-type-center{
+  flex: 4;
+  border-right: 1px solid #e5e5e5;
+  border-left: 1px solid #e5e5e5;
+}
+
+.cs-type-main-section .cs-type-left .inner-cs-type-left{
+  padding: 40px 30px;
+}
+
+.cs-type-main-section .cs-type-left .inner-cs-type-left ul.cs-side-menu li ul li{
+  font-size: 0.8125rem;
+  font-weight: 300;
+  margin-top: 15px;
+}
+.cs-type-main-section .cs-type-left .inner-cs-type-left ul.cs-side-menu > li{
+  margin-bottom: 40px;
+}
+
+.cs-type-main-section .cs-type-center  .inner-cs-type-center{
+  padding: 40px 30px;
+}
+
+.cs-type-center-tit {
+  display: flex;
+  justify-content: space-between;
+}
+.cs-type-center-tit h1{
+  border-bottom: 1px solid #111;
+  width: calc(100% - 80px);
+  padding-bottom: 10px;
+}
+.cs-type-center-tit button{
+  width: 80px;
+  height: 30px;
+  background: none;
+  border: 1px solid #111;
+  box-shadow: none;
+  border-radius: 5px;
+  font-size: 0.8125rem;
 }
