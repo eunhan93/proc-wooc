@@ -14,6 +14,7 @@ foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
   }
 }
 
+// var_dump($key);
 
 // header('Content-type: application/json'); 
 // echo json_encode(['key' => $key]);

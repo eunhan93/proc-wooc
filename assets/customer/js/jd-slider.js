@@ -18,3 +18,11 @@ const swiper_s = new Swiper('.search .swiper-container', {
   }
 });
 
+const swiper_single = new Swiper('.single-product .swiper-container', {
+  slidesPerView: 5,
+  spaceBetween: 15,
+  slidesPerGroup: 5,
+  pagination: {
+    el: '.search .swiper-pagination'
+  }
+});

@@ -1,12 +1,24 @@
+
+
 <?php 
   get_header();
 
+  ?>
 
-  echo do_shortcode('[wpmem_profile]');
-  echo '<br/>';
-  echo do_shortcode('[wpmem_logout]This the link text[/wpmem_logout]');
+<div class="inner-main cotainer-4">
+  <?php 
+
+  if(have_posts()){
+    while(have_posts()){
+      the_post();
+
+      the_content();
+    }
+  }
+  ?>
+</div>
 
 
-
+<?php 
   get_footer();
 ?>

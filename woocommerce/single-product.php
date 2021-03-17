@@ -1,6 +1,7 @@
 <?php
 
 get_header(); 
+$parentDir = dirname(__DIR__ . '..'); 
 
 // var_dump(get_post('337'));
 ?>
@@ -117,9 +118,21 @@ get_header();
 
 		<?php endwhile; // end of the loop. ?>
 
-	</div>
+		<?php
+			$args = array(
+        'post_type' 	=> array( 'product' ),
+        'product_cat' => 'jordan',
+        'orderby'   	=> 'rand',
+        'posts_per_page'		=> 10
+      ); 
+			include $parentDir . '/components/slider/woo-rec-items.php'; 
+		?>
 
-	<?php 
+</div>
+
+
+
+	<!-- <?php 
 	
 	// var_dump(get_the_ID())
 	foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
@@ -135,6 +148,6 @@ get_header();
 	}
 	
 	
-	?>
+	?> -->
 <?php
 get_footer();

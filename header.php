@@ -29,22 +29,48 @@ function put_text_meta($postNumber, $metaname){
             <img src="http://localhost/wordpress/wp-content/uploads/2021/03/jd_logo.png" alt="조단">
           </section>
           <section>
-            <?php 
-            if ( is_user_logged_in() ){
-              wp_nav_menu([
-                "theme_location" => 'tertiary_menu_id',
-                "menu_class" => 'login-menu gray-top-menu',
-              ]);
-              ?>
-              <?php
-            } else {
-              wp_nav_menu([
-                "theme_location" => 'secondary_menu_id',
-                "menu_class" => 'before-login-menu gray-top-menu',
-              ]);
-            }
+            <!-- <?php 
+            // if ( is_user_logged_in() ){
+              // wp_nav_menu([
+              //   "theme_location" => 'tertiary_menu_id',
+              //   "menu_class" => 'login-menu gray-top-menu',
+              // ]);
+              ?> -->
+              <ul class="login-menu gray-top-menu">
+                <li><a href="<?php echo home_url() . '/nike-cs' ?>">고객센터</a></li>
+                <?php 
+                  if ( is_user_logged_in() ){
+                    ?> 
+                      <li><a href="<?php echo home_url() . '/register' ?>">멤버 가입</a></li>
+                      <li><a href="<?php echo wp_logout_url(home_url()) ?>">로그아웃</a></li>
+                      
+                    <?php 
+                  } else {
+                    ?> 
+                      <li><a href="<?php echo home_url() . '/profile' ?>">마이페이지</a></li>
+                      <li><a href="javascript:;" class="login-pop">로그인</a></li>
+                      <script>
+                        const loginBtn = document.querySelector('.login-pop');
+                        loginBtn.addEventListener('click', function(e){
+                          e.preventDefault;
+                          document.querySelector('.login-popup').classList.add('on');
+                          document.querySelector('.login-popup-background').classList.add('on');
+                        });
+                      </script>
+                    <?php 
+                  }
+                ?>
+              </ul>
               
-            ?>
+              <!-- <?php
+            // } else {
+              // wp_nav_menu([
+              //   "theme_location" => 'secondary_menu_id',
+              //   "menu_class" => 'before-login-menu gray-top-menu',
+              // ]);
+            // }
+              
+            ?> -->
           </section>
         </div>
       </div>
@@ -124,21 +150,6 @@ function put_text_meta($postNumber, $metaname){
           
         </section>
 
-    <?php
-      } 
-      if(is_tax('cs-type')){
-        ?>
-        <div class="inner-main cs-type">
-          <section class="cs-type-1">
-            <div class="cs-type-1 container-4">
-              <?php 
-                include 'cs-search-form.php';
-              ?>
-            </div>
-            
-          </section>
-  
-      <?php
-        } 
+      <?php }
+
       
-    ?>

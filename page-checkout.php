@@ -1,7 +1,7 @@
 <?php 
   get_header();
 ?>
-<div class="inner-main container-1">
+<div class="inner-main container-4">
 <?php
 
   if(have_posts()){

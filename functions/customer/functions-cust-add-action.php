@@ -61,3 +61,9 @@ add_action('kboard_skin_header', function (){
 add_action('kboard_skin_footer', function (){
 	echo '</div>';
 }, 10);
+
+
+
+add_action('rtml_render_form', function (){
+	echo 'test';
+});

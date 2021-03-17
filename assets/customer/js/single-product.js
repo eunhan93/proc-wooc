@@ -87,7 +87,7 @@ q_btn.addEventListener('click', function(e){
   // let postId = document.body.classList;
 
   let add_time = String(Math.floor(+ new Date() / 1000));
-  console.log(add_time)
+  // console.log(add_time)
 
   // 장바구니에 추가    postid-317
   fetch(`${window.location.origin}/wordpress/?add-to-cart=${value_check()}&qauntity=${document.getElementById('quantity').value}`)
@@ -100,6 +100,7 @@ q_btn.addEventListener('click', function(e){
         return data.json()
       })
       .then(res => {
+        
         setTimeout(() => window.location = `${window.location.origin}/wordpress/checkout/?item=${res.key}`, 200)
         
       });

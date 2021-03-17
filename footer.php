@@ -12,9 +12,17 @@
 
     <?php
     }
+
+    if(is_single() && 'cs' == get_post_type() ){
+      ?>
+      </div>
+
+    <?php
+    }
     ?>
     
     </main>
+    <?php include 'components/login-popup.php';?>
     <footer class="footer">
     <?php 
       // var_dump(get_post_meta('216'));
