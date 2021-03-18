@@ -80,15 +80,21 @@ function put_text_meta($postNumber, $metaname){
             <img src="<?php echo get_post(get_post_meta('216', 'comp_logo_image', true)) -> guid; ?>" alt="<?php echo put_text_meta('216', 'comp_name');?>">
           </a>
         </section>
+        <?php 
+        if(!is_home()){
+        ?>
         <section>
           <?php
               wp_nav_menu([
-                "theme_location" => 'primary_menu_id',
+                "theme_location" => 'jordan_home_menu',
                 "container" => 'nav',
+                "container_class" => 'menu-proc-wooc-top-container',
                 "menu_class" => 'gnb',
               ]);
           ?>
         </section>
+        <?php }
+        ?>
        <section class="search-heart-cart">
 
         <?php get_search_form (); ?>

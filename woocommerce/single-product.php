@@ -86,6 +86,7 @@ $parentDir = dirname(__DIR__ . '..');
 				</ul>
 				
 			</div>
+			<p><a href="#"><i class="fas fa-comments"></i> <strong>NOTIFY ME</strong> 입고 알림 신청</a></p>
 			<p>
 				<label for="quantity">수량</label>
 				<input type="number" name="quantity" id="quantity" min='1' max='10' value='1'>
@@ -93,13 +94,49 @@ $parentDir = dirname(__DIR__ . '..');
 				<button type="button" class="qty-plus">+</button>
 				
 			</p>
-
+			<div class="btn-area">
+				<button type="button" class="quickBuyBtn">바로구매</button>
+				<p>
+					<input type="submit" value="장바구니">
+					<span>
+						<input type="checkbox" id="wish_cb">
+						<label for="wish_cb">위시리스트 </label>
+					</span>
+				</p>
+				
+			</div>
 			
-			<input type="submit" value="장바구니">
-			<button type="button" class="quickBuyBtn">바로구매</button>
 			</form>
+			<div class="store-pick-up">
+				<button type="button"><i class="fas fa-store"></i> 배송보다 빠른, 매장픽업 서비스</button>
+				<p>지금 주문하고, 매장에서 바로 픽업하세요.
+					<a href="https://www.nike.com/kr/ko_kr/reserveService">자세히 보기</a>
+				</p>
+			</div>
+			<div class="content">
+				<div class="inner-content">
+					<?php echo nl2br(get_post_meta(get_the_ID(), 'toc', true)) ?>
+				</div>
+				<button type="button" onclick="javascript:
+			document.querySelector('.product-read-more').classList.add('on');
+			// document.body.addEventListener('scroll', function(e) {e.preventDefault()});
+		">더 보기</button>
+			</div>
 		</div>
 	</section>
+
+	<div class="product-read-more">
+		<button onclick="javascript:
+			document.querySelector('.product-read-more').classList.remove('on');
+			// document.body.removeEventListener('scroll', function(e) {e.preventDefault()});
+
+		">x</button>
+		<div class="container-3">
+			<?php the_content() ?>
+		</div>
+		<?php do_action('custom_action_test') ?>
+		
+	</div>
 
 	<iframe src="#" name="empty_iframe" style="width:1px; height:1px; border:0; visibility:hidden;"></iframe>
 
@@ -113,7 +150,6 @@ $parentDir = dirname(__DIR__ . '..');
 	</script>
 
 
-	
 		
 
 		<?php endwhile; // end of the loop. ?>
@@ -131,23 +167,9 @@ $parentDir = dirname(__DIR__ . '..');
 </div>
 
 
-
-	<!-- <?php 
-	
-	// var_dump(get_the_ID())
-	foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
-		// $_product = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
-		echo '<pre>';
-		var_dump( $cart_item);
-
-		echo '</pre><br /><br /><br />';
-		if($cart_item['product_id'] == '317' && $cart_item['variation_id'] == '340'){
-					// var_dump( $cart_item);
-
-		}
-	}
-	
-	
-	?> -->
 <?php
 get_footer();
+
+
+
+// woocommerce_before_shop_loop_item

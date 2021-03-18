@@ -392,20 +392,21 @@ padding-bottom: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 200px);
+  height: auto;
+  min-height: calc(100vh - 200px);
 }
 
 .login-page .login-area{
   width:450px;
-  height:65vh;
+  height:650px;
 }
 
 section.login-popup{
   position: fixed;
   width: 480px;
-  height: 65vh;
+  height: 650px;
   background-color: #fff;
-  top: calc(50% - 32.5vh - 20px);
+  top: calc(50% - 325px - 20px);
   left: calc(50% - 240px);
   opacity: 0;
   visibility: hidden;
@@ -416,7 +417,7 @@ section.login-popup{
 section.login-popup.on{
   opacity: 1;
   visibility: visible;
-  top: calc(50% - 32.5vh);
+  top: calc(50% - 325px);
 }
 
 

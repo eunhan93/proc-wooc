@@ -1,5 +1,67 @@
-// redirection url 변경 
+
+// 폼 서브밋 전 url 변경 => 아이디 입력시에 체크?
+
+
+// form submit 했을 때 실행 => 엔터를 두번 쳐야 실행됨...
+
+// let change_redirect_url = (e) => {
+//   e.preventDefault();
+
+//   fetch('http://localhost/wordpress/mb_check/',{
+//     method: "POST",
+//   headers: {
+//     "Content-Type": "application/json",
+//   },
+//     body: JSON.stringify({
+//       userId: e.target.firstElementChild.lastElementChild.value,
+//     }),
+//   })
+//   .then(data => data.json())
+//   .then(res => {
+//     if(res.user_role === 'administrator' && window.location.search.indexOf('wp-admin') >= 0){
+//       document.querySelectorAll('.tml-login input[name=redirect_to]').forEach(el => el.setAttribute('value', `${window.location.origin}/wordpress/wp-admin`));
+//     } else {
+//       document.querySelectorAll('.tml-login input[name=redirect_to]').forEach(el => el.setAttribute('value', `${window.location.origin}/wordpress`));
+//     }
+
+//     document.querySelectorAll('.login-form-area form[name=login]').forEach(el => {el.removeEventListener('submit', change_redirect_url)});
+//   });
+// }
+
+// document.querySelectorAll('.login-form-area form[name=login]').forEach(el => el.addEventListener('submit', change_redirect_url));
+
+
+// id 입력할 때 실행
+
+// 기본값
 document.querySelectorAll('.tml-login input[name=redirect_to]').forEach(el => el.setAttribute('value', `${window.location.origin}/wordpress`));
+
+let change_redirect_url = (e) => {
+  // console.log(e.target.value);
+  fetch('http://localhost/wordpress/mb_check/',{
+    method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+    body: JSON.stringify({
+      userId: e.target.value,
+    }),
+  })
+  .then(data => data.json())
+  .then(res => {
+    // console.log(res)
+    if(res.user_role === 'administrator' && window.location.search.indexOf('wp-admin') >= 0){
+      document.querySelectorAll('.tml-login input[name=redirect_to]').forEach(el => el.setAttribute('value', `${window.location.origin}/wordpress/wp-admin`));
+    } 
+    // else {
+    //   document.querySelectorAll('.tml-login input[name=redirect_to]').forEach(el => el.setAttribute('value', `${window.location.origin}/wordpress`));
+    // }
+  });
+}
+
+document.querySelectorAll('.login-form-area form[name=login] input#user_login').forEach(el => el.addEventListener('keyup', change_redirect_url));
+
+
 
 
 // 아이디, 패스워드 input에 placeholder 추가

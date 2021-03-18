@@ -7,6 +7,7 @@
     </div>
     <div class="login-form-area">
       <?php echo do_shortcode('[theme-my-login action="login"]')?>
+      
     </div>
   </div>
 </section>
