@@ -17,3 +17,11 @@
 // 	// ) );
 // }
 // add_action( 'init', 'add_tml_registration_form_fields' );
+
+
+// function woo_related_products_limit() {
+//   global $product;
+	
+// 	$args['posts_per_page'] = 6;
+// 	return $args;
+// }

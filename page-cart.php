@@ -8,7 +8,7 @@
     while(have_posts()){
       the_post();
 
-      var_dump(get_post_taxonomies(get_the_ID()))
+      // var_dump(get_post_taxonomies(get_the_ID()))
       ?>
 
         

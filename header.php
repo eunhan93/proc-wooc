@@ -141,7 +141,7 @@ function put_text_meta($postNumber, $metaname){
       </div>
       <?php  } ?>
     </header>
-    <main>
+    <main class="<?php echo (is_single() && 'product' == get_post_type()) ? 'container-3' : '' ?>">
     <?php 
     if(is_page('nike-cs')){
       ?>

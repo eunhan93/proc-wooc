@@ -3,6 +3,7 @@
 function proc_cust_scripts(){
   wp_enqueue_style('original', get_stylesheet_uri());
   wp_enqueue_style('cust-style', get_template_directory_uri() . '/assets/customer/css/style.css');
+  wp_enqueue_style('single-product', get_template_directory_uri() . '/assets/customer/css/single-product.css');
 
   // tml 로그인, 회원가입 등 보여지는 부분 수정
   wp_enqueue_script('tml-form-change', get_template_directory_uri() . '/assets/customer/js/tml-form-change.js', [], '1.0', true);

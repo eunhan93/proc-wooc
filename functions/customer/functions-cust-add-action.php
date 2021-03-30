@@ -67,3 +67,96 @@ add_action('kboard_skin_footer', function (){
 add_action('rtml_render_form', function (){
 	echo 'test';
 });
+
+
+
+add_action('woocommerce_product_thumbnails', function(){
+	echo '<div class="product-images">';
+	global $product;
+	foreach($product->gallery_image_ids as $imgId){
+		echo '<div class="product-image">';
+		echo '<img src = "' . wp_get_attachment_image_url($imgId, 'large') . '" alt="' . $product->name . '" />';
+		echo '</div>';
+	}
+	echo '</div>';
+});
+
+
+add_action('woocommerce_variable_add_to_cart', function(){
+	if(!empty(get_post_meta(get_the_ID(), "g_items", true))){
+		echo '<div class="product-colors">';
+			$postIdArr = get_post_meta(get_the_ID(), "g_items", true);
+			foreach($postIdArr as $gi) {
+				$tag__ = '<a href = "';
+				$tag__ .= get_the_permalink($gi);
+				$tag__ .= '" ';
+				$tag__ .= ($gi == get_the_ID()) ? ' class="this_product">' : ">";
+				$tag__ .= get_the_post_thumbnail($gi, "thumbnail", ["class" => "group-item-thumbnail"]);
+				$tag__ .= '</a>';
+				echo $tag__;
+			}
+		echo '</div>';
+	}
+	
+});
+
+
+add_action('woocommerce_single_product_summary', function(){
+	global $product;
+	echo '<div class="single-title">';
+
+	echo wc_get_product_tag_list( $product->get_id(), ' ');
+}, 4);
+
+add_action('woocommerce_single_product_summary', function(){
+	echo '</div>';
+}, 15);
+
+
+add_action('woocommerce_before_add_to_cart_button', function(){
+	echo '<p class="notifyme"><a href="#"><i class="fas fa-comments"></i> <strong>NOTIFY ME</strong> 입고 알림 신청</a></p>';
+});
+
+
+add_action('woocommerce_after_add_to_cart_quantity', function(){
+	echo '<div class="single-product-btn-area">';
+}, 5);
+
+
+add_action(' woocommerce_after_single_variation', function(){
+	echo '</div>';
+}, 5);
+
+
+add_action('woocommerce_before_single_product_summary ', function(){
+	echo '<div class="test" style="display:flex">';
+}, 5);
+
+add_action('woocommerce_after_single_product_summary', function(){
+	echo '</div>';
+}, 5);
+
+
+add_action('woocommerce_before_quantity_input_field', function() {
+	if(is_single() && 'product' == get_post_type()){
+		echo '<span>수량</span>';
+	}
+	
+},10);
+
+add_action('woocommerce_after_quantity_input_field', function(){
+	if(is_single() && 'product' == get_post_type()){
+		
+	echo '<button type="button" class="qty-minus">-</button>';
+	echo '<button type="button" class="qty-plus">+</button>';
+	}
+}, 10);
+
+add_action('woocommerce_after_add_to_cart_form', function(){
+	echo '<div class="store-pick-up">
+				<button type="button"><i class="fas fa-store"></i> 배송보다 빠른, 매장픽업 서비스</button>
+				<p>지금 주문하고, 매장에서 바로 픽업하세요.
+					<a href="https://www.nike.com/kr/ko_kr/reserveService">자세히 보기</a>
+				</p>
+			</div>';
+}, 10);
